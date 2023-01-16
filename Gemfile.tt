@@ -52,6 +52,8 @@ group :test do
   <%= gemfile_entry "capybara" -%>
   gem "capybara-lockstep"
   gem "minitest-ci", require: false
+  gem "minitest-focus"
+  gem "minitest-reporters"
   <%= gemfile_entry "selenium-webdriver" -%>
   gem "shoulda-context"
   gem "shoulda-matchers"
