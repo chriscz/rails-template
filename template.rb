@@ -17,6 +17,8 @@ def apply_template!
 
   template "Gemfile.tt", force: true
 
+  template "Guardfile.tt"
+
   template "README.md.tt", force: true
   remove_file "README.rdoc"
 
@@ -62,7 +64,7 @@ def apply_template!
     create_database_and_initial_migration
     run_with_clean_bundler_env "bin/setup"
 
-    binstubs = %w[brakeman bundler bundler-audit erb_lint rubocop sidekiq thor]
+    binstubs = %w[brakeman bundler bundler-audit erb_lint guard rubocop sidekiq thor]
     run_with_clean_bundler_env "bundle binstubs #{binstubs.join(' ')} --force"
 
     remove_file "Procfile.dev" unless File.exist?("bin/dev")
