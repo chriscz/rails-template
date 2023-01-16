@@ -2,6 +2,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%%= [5, *ENV.values_at("RAILS_MAX_THREADS", "SIDEKIQ_CONCURRENCY")].map(&:to_i).max %>
+  url: <%%= ENV["DATABASE_URL"] %>
 
 development:
   <<: *default
