@@ -51,6 +51,8 @@ end
 group :test do
   <%= gemfile_entry "capybara" -%>
   gem "capybara-lockstep"
+  gem "factory_bot"
+  gem "factory_bot_rails"
   gem "minitest-ci", require: false
   gem "minitest-focus"
   gem "minitest-reporters"
